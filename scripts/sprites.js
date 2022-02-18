@@ -20,7 +20,7 @@ var spriteNumber={
 
 
 
-// set every sprites configs
+// Establecer las configuraciones de todos los sprites
 function setSprites(){
   setSpriteGroups();
   loadStaticObjects( mountains, mountainImages, spriteNumber.mountain ,1.5, gameConfig.screenX, gameConfig.screenY-35, gameConfig.screenY-35);
@@ -33,9 +33,9 @@ function setSprites(){
 }
 
 
-//declare sprite groups 
+// Declarar grupos de sprites 
 function setSpriteGroups(){
-  //groups 
+  //Grupos 
   bricks = new Group();
   enemyMushrooms = new Group();
   clouds = new Group();
@@ -46,11 +46,11 @@ function setSpriteGroups(){
 };
 
 
-//load static object function
+//Función para cargar objetos estáticos
 function loadStaticObjects( group, imageArray, spriteNumber, randomPosStartX, randomPosEndX, randomPosStartY, randomPosEndY) {
   for(var i = 0; i < spriteNumber; i++) {
     
-    // load random image in image array
+    // Cargar una imagen aleatoria en un arreglo de imagen
     var randomNumber=floor((random()*10)%imageArray.length);
     var img = loadImage(imageArray[randomNumber]);
 
@@ -60,7 +60,7 @@ function loadStaticObjects( group, imageArray, spriteNumber, randomPosStartX, ra
   }
 };
 
-//load animate object function
+//Función para cargar un objeto animado
 function loadAnimatedObjects( group, imageArray, animationName, spriteNumber, spriteStatusName, spriteStatusValue,  randomPosStartX, randomPosEndX, randomPosStartY, randomPosEndY) {
   for(var i = 0; i < spriteNumber; i++) {
     
@@ -73,7 +73,7 @@ function loadAnimatedObjects( group, imageArray, animationName, spriteNumber, sp
 };
 
 
-// load platforms
+// Cargar plataformas
 function loadPlatforms() {
   img=loadImage('imgs/scene/platform.png');
   for(i=0;i<70;i++){
@@ -89,7 +89,7 @@ function loadPlatforms() {
 
 
 
-// load Mario animation
+// Cargar la animación de Mario 
 function MarioAnimation(){
   mario=createSprite(gameConfig.startingPointX, gameConfig.startingPointY, gameConfig.startingPoint, 0.30);
   mario.addAnimation("stand",'imgs/mario/mario06.png');
